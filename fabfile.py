@@ -11,7 +11,7 @@ def push(msg):
     local(f'git commit -m "{msg}"')
     local('git push')
 
-def clean():
+def up():
     local('python setup.py sdist bdist_wheel')
     local('twine upload dist/*')
     local('rd /s/q build')
