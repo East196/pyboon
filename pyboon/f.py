@@ -5,6 +5,13 @@ import shutil
 import codecs
 import chevron
 
+CURRENT_DIR = os.path.split(os.path.realpath(__file__))[0]
+
+
+def current_src_dir():
+    return CURRENT_DIR
+
+
 def read(rpath):
     with codecs.open(rpath, 'r', encoding='utf-8') as f:
         content = f.read()

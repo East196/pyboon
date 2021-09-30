@@ -5,7 +5,7 @@ with open("README.rst", "r") as f:
   long_description = f.read()
 
 setup(name='pyboon',  # 包名
-      version='0.0.4',  # 版本号
+      version='0.0.7',  # 版本号
       description='A boon',
       long_description=long_description,
       author='east196',

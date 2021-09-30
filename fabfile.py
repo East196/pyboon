@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
+import shutil
 import re
 from fabric.api import local, lcd
 from pyboon import x, f
@@ -16,9 +17,9 @@ def up():
     upv()
     local('python setup.py sdist bdist_wheel')
     local('twine upload dist/*')
-    local('rd /s/q build')
-    local('rd /s/q dist')
-    local('rd /s/q pyboon.egg-info')
+    shutil.rmtree('build')
+    shutil.rmtree('dist')
+    shutil.rmtree('pyboon.egg-info')
 
 
 def upv(abc="+"):
@@ -36,6 +37,11 @@ def upv(abc="+"):
     nvs = vs.replace(v, nv)
     ncontent = content.replace(vs, nvs)
     f.write(os.path.join(os.getcwd(), "setup.py"), ncontent)
+
+
+def t():
+    f.CURRENT_DIR = os.path.split(os.path.realpath(__file__))[0]
+    print(f.current_src_dir())
 
 
 def rei():
