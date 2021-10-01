@@ -12,7 +12,7 @@ def get_db(url):
 def qb(l,sql):
     ret = re.search(r"SELECT (.*) FROM", sql)
     _, v = ret.group(0), ret.group(1)
-    fields = v.split(",")
+    fields = [field.strip() for field in v.split(",")]
     print(fields)
     result = []
     for item in l:
@@ -29,7 +29,7 @@ def qb(l,sql):
 def qb_one(l,sql):
     ret = re.search(r"SELECT (.*) FROM", sql)
     _, v = ret.group(0), ret.group(1)
-    fields = v.split(",")
+    fields = [field.strip() for field in v.split(",")]
     print(fields)
     result = []
     for item in l:

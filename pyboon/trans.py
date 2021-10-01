@@ -1,6 +1,6 @@
 import os,json
 from  openpyxl import  Workbook ,load_workbook
-from pyboon import x,f
+from pyboon import file as f
 from rich.console import Console
 
 def csv2xl(csvfile):
