@@ -13,3 +13,5 @@ def test_convert():
     assert '1.0' == to_str(1.0)
     assert {"k":"v","v":"汉字"} == to_dict('{"k":"v","v":"汉字"}')
     assert '{"k": "v", "v": "汉字"}' == to_json({"k":"v","v":"汉字"})
+    assert {"k":"v","v":"汉字"} == to_dict('k: v\nv: "汉字"\n')
+    assert 'k: v\nv: "汉字"\n' == to_yaml({"k":"v","v":"汉字"})

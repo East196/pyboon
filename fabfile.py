@@ -5,6 +5,7 @@ import shutil
 import re
 from fabric.api import local, lcd
 from pyboon import x, f
+from pyboon.file import tpl
 
 
 def push(msg):

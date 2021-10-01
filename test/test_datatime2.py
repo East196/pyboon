@@ -1,4 +1,4 @@
-from pyboon.datetime import *
+from pyboon.datetime2 import *
 
 def test_datetime():
     dts = "2021-12-12 09:10:11"
