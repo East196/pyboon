@@ -1,6 +1,6 @@
 # pyboon
 
-This is a boon.
+This is a boon for python3.
 
 ## Development
 ```

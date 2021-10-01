@@ -44,9 +44,15 @@ def t():
     print(f.current_src_dir())
 
 
+def li():
+    local('pip install -e . --user')
+    shutil.rmtree('pyboon.egg-info')
+
 def rei(src=None):
     local('pip uninstall pyboon -y')
     if src:
         local('pip install -i https://pypi.org/simple pyboon')
     else:   
         local('pip install pyboon')
+
+
