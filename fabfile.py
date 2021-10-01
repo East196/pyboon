@@ -44,6 +44,9 @@ def t():
     print(f.current_src_dir())
 
 
-def rei():
+def rei(src=None):
     local('pip uninstall pyboon -y')
-    local('pip install pyboon')
+    if src:
+        local('pip install -i https://pypi.org/simple pyboon')
+    else:   
+        local('pip install pyboon')
