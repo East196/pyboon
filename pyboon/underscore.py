@@ -12,15 +12,35 @@ def filter2(items, func):
     return list(items)
 
 
+def find(items, func):
+    items = filter(func, items)
+    items = list(items)
+    return items[0] if items else None
+
+
 def reduce2(items, func):
     return reduce(func, items)
+
+
+def range2(*into):
+    if isinstance(into, list) or isinstance(into, tuple):
+        return list(range(*into))
+    return list(range(into))
 
 
 def size(into):
     return len(into)
 
 
-def range2(into):
-    if isinstance(into,list) or isinstance(into,tuple):
-        return range(*into)
-    return range(into)
+def trim(s):
+    return s.strip()
+
+
+def repeat(s, n=2):
+    return s*n
+
+
+def pad(s, n=0, c='0'):
+    if n <= len(s):
+        return s
+    return c*(n-len(s))+s
