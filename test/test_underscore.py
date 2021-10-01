@@ -7,3 +7,4 @@ def test_underscore():
     assert 6 == _.reduce2(items,lambda x,y:x+y)
     assert 3 == _.size(items)
     assert 6 == _.size("123456")
+    assert [0] == _.range2(1)
