@@ -4,14 +4,34 @@ import time
 import requests
 import random
 from hashlib import md5
+from rich.table import Table
 from rich.console import Console
 from rich.syntax import Syntax
 
 
 def highlight(code, language="python"):
+    if type(code) is dict or type(code) is list:
+         code = json.dumps(code, indent=2, ensure_ascii=False)
     syntax = Syntax(code, language)
     console = Console()
     console.print(syntax)
+
+def print_table(dicts):
+    ctable = Table()
+    for k, v in dicts[0].items():
+        ctable.add_column(f'[red]{k}')
+    for column in dicts:
+        ctable.add_row(*[f'[yellow]{v}' for k, v in column.items()])
+    console = Console()
+    console.print(ctable)
+
+def to_table(dicts):
+    import prettytable as pt
+    tb = pt.PrettyTable()
+    tb.field_names = [k for k, _ in dicts[0].items()]
+    for column in dicts:
+        tb.add_row([v for k, v in column.items()])
+    return tb.get_string()
 
 
 def to_dict(s):

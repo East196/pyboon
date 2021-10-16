@@ -28,12 +28,16 @@ def to_datetime_str(dt):
 def to_yaml(d):
     content = yaml.dump(d, default_flow_style=False)
     content = re.sub(r'(\\u[a-zA-Z0-9]{4})', lambda x: x.group(
-        1).encode("utf-8").decode("unicode-escape"), content) # 逐段解码
+        1).encode("utf-8").decode("unicode-escape"), content)  # 逐段解码
     return content
 
 
 def to_json(d):
     return json.dumps(d, ensure_ascii=False)
+
+
+def to_json2(d):
+    return json.dumps(d, ensure_ascii=False, indent=2)
 
 
 def to_dict(s):

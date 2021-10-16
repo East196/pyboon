@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setup(name='pyboon',  # 包名
-      version='0.0.18',  # 版本号
+      version='0.0.19',  # 版本号
       description='A boon',
       long_description=long_description,
       long_description_content_type="text/markdown",
@@ -27,6 +27,7 @@ setup(name='pyboon',  # 包名
           'Programming Language :: Python :: 3.6',
           'Programming Language :: Python :: 3.7',
           'Programming Language :: Python :: 3.8',
+          'Programming Language :: Python :: 3.9',
           'Topic :: Software Development :: Libraries'
       ],
       )
