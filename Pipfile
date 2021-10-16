@@ -11,8 +11,12 @@ rich = "*"
 chevron = "*"
 markdown = "*"
 pyyaml = "*"
+pymysql = "*"
+dataset = "*"
+openpyxl = "*"
 
 [dev-packages]
+autopep8 = "*"
 
 [requires]
 python_version = "3.9"

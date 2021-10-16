@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setup(name='pyboon',  # 包名
-      version='0.0.19',  # 版本号
+      version='0.0.20',  # 版本号
       description='A boon',
       long_description=long_description,
       long_description_content_type="text/markdown",
@@ -13,6 +13,8 @@ setup(name='pyboon',  # 包名
       author_email='east196@outlook.com',
       url='https://github.com/east196/pyboon',
       install_requires=['requests', 'bs4', 'rich',
+                        'pymysql','dataset',
+                        'openpyxl',
                         'chevron', 'markdown', 'pyyaml'],
       license='Apache License 2.0',
       packages=find_packages(),

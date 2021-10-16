@@ -98,6 +98,13 @@ def to_minus(s):
     us = to_seq(s)
     return us.replace(" ", "-")
 
+def to_html(md):
+    import markdown
+    html = markdown.markdown(md, extensions=['tables'])
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, 'html.parser')
+    return soup.prettify()
+
 
 def translate(query):
     url = 'http://fanyi.youdao.com/translate'
