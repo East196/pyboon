@@ -46,7 +46,7 @@ def t():
 
 
 def li():
-    local('pip install -e . --user')
+    local('pip install -e .')
     shutil.rmtree('pyboon.egg-info')
 
 def rei(src=None):

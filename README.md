@@ -2,7 +2,15 @@
 
 This is a boon for python3.
 
+
+
 ## Development
+```shell
+pipx install twine fabric3 pipenv
+pipenv install
+```
+
+
 ```
 python setup.py sdist bdist_wheel 
 twine upload dist/* 

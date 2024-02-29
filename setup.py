@@ -1,11 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from distutils.core import setup
 from setuptools import find_packages
 
-with open("README.md", "r") as f:
+with open("README.md", "r",encoding="utf-8") as f:
     long_description = f.read()
 
 setup(name='pyboon',  # 包名
-      version='0.0.20',  # 版本号
+      version='0.0.24',  # 版本号
       description='A boon',
       long_description=long_description,
       long_description_content_type="text/markdown",
@@ -15,7 +18,7 @@ setup(name='pyboon',  # 包名
       install_requires=['requests', 'bs4', 'rich',
                         'pymysql','dataset',
                         'openpyxl',
-                        'chevron', 'markdown', 'pyyaml'],
+                        'chevron', 'markdown', 'pyyaml','record'],
       license='Apache License 2.0',
       packages=find_packages(),
       platforms=["all"],
