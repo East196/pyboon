@@ -107,7 +107,8 @@ def tm():
     for table in info():
         model: dict = dict(model=table['name'], Model=x.to_pascal(
             table['name']), modelCN=table['comment'])
-        model.setdefault("fields", [])
+        if 'fields' not in model:
+            model['fields'] = []
         # print(model)
         for column in table['columns']:
             field = dict(

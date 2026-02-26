@@ -14,5 +14,7 @@
   "reportMissingTypeStubs": false,
   "reportUnusedImport": "warning",
   "reportUnusedVariable": "warning",
-  "reportUntypedFunctionDecorator": "none"
+  "reportUntypedFunctionDecorator": "none",
+  "reportOptionalSubscript": "warning",
+  "reportOptionalMemberAccess": "warning"
 }
