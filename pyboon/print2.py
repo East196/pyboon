@@ -1,6 +1,5 @@
 import json
 from rich.table import Table
-from rich.panel import Panel
 from rich.syntax import Syntax
 from rich.console import Console
 console = Console()

@@ -2,8 +2,6 @@ import datetime
 import json
 import time
 import requests
-import random
-from hashlib import md5
 from rich.table import Table
 from rich.console import Console
 from rich.syntax import Syntax

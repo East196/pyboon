@@ -13,12 +13,15 @@ from rich.console import Console
 def csv2xl(csvfile):
     wb = Workbook()
     ws = wb.active
+    if ws is None:
+        raise RuntimeError("Failed to get active worksheet")
 
     txt = f.read(csvfile)
 
     for line in txt.split("\n"):
-        print(line)
-        ws.append(line.split(","))
+        if line.strip():  # 跳过空行
+            print(line)
+            ws.append(line.split(","))
 
     wb.save(csvfile.replace(".txt", ".xlsx"))
 
@@ -29,7 +32,7 @@ def xl2csv(xlfile):
 
     lines = []
     for row in ws.iter_rows():
-        values = [cell.value for cell in row]
+        values = [str(cell.value) if cell.value is not None else "" for cell in row]
         if values[0]:
             lines.append(",".join(values))
 
@@ -102,10 +105,13 @@ def to_csv(l, head=[], show=[]):
 def to_xlsx(l, head=[], show=[]):
     wb = Workbook()
     ws = wb.active
+    if ws is None:
+        raise RuntimeError("Failed to get active worksheet")
 
     for line in to_csv(l,head,show).split("\n"):
-        print(line)
-        ws.append(line.split(","))
+        if line.strip():  # 跳过空行
+            print(line)
+            ws.append(line.split(","))
 
     wb.save("a.xlsx")
 

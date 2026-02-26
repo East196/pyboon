@@ -105,7 +105,7 @@ def todb():
 def tm():
     models = []
     for table in info():
-        model = dict(model=table['name'], Model=x.to_pascal(
+        model: dict = dict(model=table['name'], Model=x.to_pascal(
             table['name']), modelCN=table['comment'])
         model.setdefault("fields", [])
         # print(model)
@@ -119,6 +119,8 @@ def tm():
     
 def qb(l, sql):
     ret = re.search(r"SELECT (.*) FROM", sql)
+    if ret is None:
+        raise ValueError("Invalid SQL query")
     _, v = ret.group(0), ret.group(1)
     fields = [field.strip() for field in v.split(",")]
     print(fields)
@@ -137,6 +139,8 @@ def qb(l, sql):
 
 def qb_one(l, sql):
     ret = re.search(r"SELECT (.*) FROM", sql)
+    if ret is None:
+        raise ValueError("Invalid SQL query")
     _, v = ret.group(0), ret.group(1)
     fields = [field.strip() for field in v.split(",")]
     print(fields)

@@ -1,0 +1,18 @@
+{
+  "include": [
+    "pyboon",
+    "test"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    ".git"
+  ],
+  "typeCheckingMode": "basic",
+  "pythonVersion": "3.9",
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "reportUnusedImport": "warning",
+  "reportUnusedVariable": "warning",
+  "reportUntypedFunctionDecorator": "none"
+}
